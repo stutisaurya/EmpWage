@@ -4,15 +4,19 @@ public class EmployeeWageCalculation {
 	public static void main(String args[])
 
 	{
-		System.out.println("Welcome to empwage program");
-		int fulltime = 1;
-		double value = (Math.floor(Math.random() * 10) % 2);
+		int IS_FULL_TIME = 1;
+		int EMP_RATE_PER_HOUR = 20;
 
-		if (value == fulltime)
-			System.out.println("employee is present");
+		int empHrs = 0;
+		int empWage = 0;
+
+		double empCheck = Math.floor(Math.random() * 10) % 2;
+		if (empCheck == IS_FULL_TIME)
+			empHrs = 8;
 		else
-			System.out.println("employee is absent");
-
+			empHrs = 0;
+		empWage = empHrs * EMP_RATE_PER_HOUR;
+		System.out.println("Employee Wage: " + empWage);
 	}
 
 }
