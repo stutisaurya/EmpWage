@@ -35,7 +35,7 @@ public class EmployeeWageCalculation {
 			default:
 				empHrs = 0;
 			}
-			totalEmpHrs += empHrs;
+			totalEmpHrs += empHrs; // total EmpHrs= EmpHrs + total EmpHrs
 			System.out.println("Day# : " + totalWorkingDays + " Emp Hr : " + empHrs);
 		}
 		totalEmpWage = totalEmpHrs * wagePerHour;
