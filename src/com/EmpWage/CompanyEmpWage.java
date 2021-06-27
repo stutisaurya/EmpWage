@@ -1,6 +1,7 @@
 package com.EmpWage;
 
 public class CompanyEmpWage {
+
 	public final String company;
 	public final int wagePerHour;
 	public final int maxWorkingDayInMonth;

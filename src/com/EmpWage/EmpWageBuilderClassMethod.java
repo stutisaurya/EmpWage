@@ -1,27 +1,33 @@
 package com.EmpWage;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class EmpWageBuilderClassMethod implements IComputeEmpWage {
 
 	public static final int IS_FULL_TIME = 1;
 	public static final int IS_PART_TIME = 2;
 
-	private int noOfCompany = 0;
-	private CompanyEmpWage[] companyEmpWageArray;
+	private ArrayList<CompanyEmpWage> companyEmpWageList;
+	private HashMap<String, CompanyEmpWage> companyEmpWageMap;
 
 	public EmpWageBuilderClassMethod() {
-		companyEmpWageArray = new CompanyEmpWage[5];
+		companyEmpWageList = new ArrayList<CompanyEmpWage>();
+		companyEmpWageMap = new HashMap<String, CompanyEmpWage>();
 	}
 
 	public void addCompanyEmpWage(String company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth) {
-		companyEmpWageArray[noOfCompany] = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays,
-				maxHoursPerMonth);
-		noOfCompany++;
+		CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
+
+		companyEmpWageList.add(companyEmpWage);
+		companyEmpWageMap.put(company, companyEmpWage);
 	}
 
 	public void computeEmpWage() {
-		for (int i = 0; i < noOfCompany; i++) {
-			companyEmpWageArray[i].setTotalEmpWage(this.computeEmpWage(companyEmpWageArray[i]));
-			System.out.println(companyEmpWageArray[i]);
+		for (int i = 0; i < companyEmpWageList.size(); i++) {
+			CompanyEmpWage company = companyEmpWageList.get(i);
+			company.setTotalEmpWage(this.computeEmpWage(company));
+			System.out.println(company);
 		}
 	}
 
