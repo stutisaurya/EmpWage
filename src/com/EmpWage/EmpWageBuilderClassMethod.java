@@ -62,4 +62,10 @@ public class EmpWageBuilderClassMethod implements IComputeEmpWage {
 		return totalWorkingHours * companyEmpWage.wagePerHour;
 	}
 
+	@Override
+	public int getTotalWage(String company) {
+
+		return companyEmpWageMap.get(company).totalWage;
+	}
+
 }
