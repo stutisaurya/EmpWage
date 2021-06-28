@@ -55,7 +55,8 @@ public class EmpWageBuilderClassMethod implements IComputeEmpWage {
 			}
 
 			totalWorkingDays++;
-			System.out.println("Day= " + totalWorkingDays + "	Today's work Hour= " + workHour);
+			System.out.println("Day= " + totalWorkingDays + "	Today's work Hour= " + workHour + "	Daily Wage= "
+					+ workHour * totalWorkingDays);
 		}
 
 		return totalWorkingHours * companyEmpWage.wagePerHour;
